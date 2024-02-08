@@ -1,4 +1,5 @@
 # Applciation NodeJS & MySQl dockerisé
+Note : l'application est tiré du répertoire suivant : https://github.com/fazt/crud-nodejs-mysql
 ## Dockerfile
 ### Construction de l'application via Dockerfile
 Le fichier Dockerfile permet de construire l'image de l'application NodeJS & MySQL. Pour cela, il faut se placer dans le répertoire de l'application et exécuter la commande suivante:
