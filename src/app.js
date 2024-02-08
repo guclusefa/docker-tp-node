@@ -22,8 +22,6 @@ app.use(express.urlencoded({ extended: false }));
 // routes
 app.use(customerRoutes);
 
-console.log(process.env.DB_USER)
-
 // static files
 app.use(express.static(path.join(__dirname, "public")));
 
