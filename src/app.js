@@ -1,9 +1,11 @@
+import dotenv from "dotenv";
 import express from "express";
-import path from "path";
 import morgan from "morgan";
-
-import customerRoutes from "./routes/customer.routes.js";
+import path from "path";
 import { fileURLToPath } from "url";
+import customerRoutes from "./routes/customer.routes.js";
+
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -19,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use(customerRoutes);
+
+console.log(process.env.DB_USER)
 
 // static files
 app.use(express.static(path.join(__dirname, "public")));
