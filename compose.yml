@@ -1,0 +1,23 @@
+version: '3'
+
+# Les services
+services:
+  # Notre application node qui tourne sur le port 3000 et qui dépend de la base de données "db"
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  # Notre base de données mysql "db" qui tourne sur le port 3306, on lui passe la configuration aisi que le volume de base (db.sql)
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: customersdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
