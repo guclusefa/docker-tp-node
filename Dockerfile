@@ -25,11 +25,5 @@ COPY --from=builder /app .
 # Exposition du port approprié
 EXPOSE 3000
 
-# Définition des variables d'environnement pour la base de données
-ENV DB_HOST=localhost
-ENV DB_USER=root
-ENV DB_PASSWORD=
-ENV DB_NAME=docker-app
-
 # Commande de démarrage de l'application
 CMD ["npm", "start"]
